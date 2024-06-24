@@ -20,5 +20,6 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    // System.setProperty("webdriver.chrome.driver", "/Users/pramodkalidindi/Downloads/chromedriver-mac-64/chromedriver");
     // systemProperty 'webdriver.chrome.driver', System.getProperty("user.dir") + "/chromedriver"
 }
