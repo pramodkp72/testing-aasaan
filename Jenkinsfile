@@ -10,9 +10,8 @@ pipeline {
                 script {
                     // Download and install ChromeDriver using curl
                     sh 'curl -O https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip'
-                    sh 'unzip chromedriver_linux64.zip'
+                    sh 'unzip -o chromedriver_linux64.zip'
                     sh 'chmod +x chromedriver'
-                    sh "mv chromedriver ${CHROME_DRIVER_PATH}"
                 }
             }
         }
