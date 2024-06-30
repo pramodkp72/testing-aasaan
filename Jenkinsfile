@@ -7,8 +7,8 @@ pipeline {
         stage('Setup') {
             steps {
                 script {
-                    // Download and install ChromeDriver
-                    sh 'wget https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip'
+                    // Download and install ChromeDriver using curl
+                    sh 'curl -O https://chromedriver.storage.googleapis.com/$(curl -s https://chromedriver.storage.googleapis.com/LATEST_RELEASE)/chromedriver_linux64.zip'
                     sh 'unzip chromedriver_linux64.zip'
                     sh 'chmod +x chromedriver'
                     sh 'mv chromedriver /usr/local/bin/chromedriver'
