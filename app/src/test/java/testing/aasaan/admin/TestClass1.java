@@ -20,7 +20,7 @@ public class TestClass1 {
     public void testMethod1() {
         driver.get("https://aasaan.app");
         String title = driver.getTitle();
-        assertEquals("Aasaan - Headless commerce using AI", title);
+        assertEquals("Aasaan - Headless commerce using A", title);
     }
 
     @AfterAll
