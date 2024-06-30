@@ -6,17 +6,23 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git url: 'https://github.com/pramodkp72/testing-aasaan', credentialsId: 'github-pramodkp72-classic-token'
+                script {
+                    git url: 'https://github.com/pramodkp72/testing-aasaan.git', credentialsId: 'github-pramodkp72-classic-token'
+                }
             }
         }
         stage('Build') {
             steps {
-                sh './gradlew clean build'
+                script {
+                    sh './gradlew clean build'
+                }
             }
         }
         stage('Test') {
             steps {
-                sh './gradlew test'
+                script {
+                    sh './gradlew test'
+                }
             }
         }
     }
