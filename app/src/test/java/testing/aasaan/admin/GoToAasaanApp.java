@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestClass1 {
+public class GoToAasaanApp {
     private static WebDriver driver;
 
     @BeforeAll
@@ -20,7 +20,7 @@ public class TestClass1 {
     public void testMethod1() {
         driver.get("https://aasaan.app");
         String title = driver.getTitle();
-        assertEquals("Aasaan - Headless commerce using A", title);
+        assertEquals("Aasaan - Headless commerce using AI", title);
     }
 
     @AfterAll
