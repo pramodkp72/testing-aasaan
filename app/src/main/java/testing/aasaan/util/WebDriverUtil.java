@@ -10,17 +10,17 @@ public class WebDriverUtil {
 
     public static WebDriver getDriver() {
         if (driver == null) {
+            //     // 1. Setup WebDriverManager (downloads if needed)
+            // WebDriverManager.chromedriver().setup(); 
 
-        //     // 1. Setup WebDriverManager (downloads if needed)
-        // WebDriverManager.chromedriver().setup(); 
+            // // 2. (Optional) Headless Chrome Configuration
+            // ChromeOptions options = new ChromeOptions();
+            // options.addArguments("--headless=new");
+            // options.addArguments("--disable-gpu"); // Might be needed
 
-        // // 2. (Optional) Headless Chrome Configuration
-        // ChromeOptions options = new ChromeOptions();
-        // options.addArguments("--headless=new");
-        // options.addArguments("--disable-gpu"); // Might be needed
+            // // 3. Instantiate your WebDriver
+            // WebDriver driver = new ChromeDriver(options); // Use options if headless
 
-        // // 3. Instantiate your WebDriver
-        // WebDriver driver = new ChromeDriver(options); // Use options if headless
             // To run chrome options in headless
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
