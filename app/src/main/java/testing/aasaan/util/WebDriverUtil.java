@@ -22,14 +22,14 @@ public class WebDriverUtil {
             // WebDriver driver = new ChromeDriver(options); // Use options if headless
 
             // To run chrome options in headless
-            // ChromeOptions options = new ChromeOptions();
-            // options.addArguments("--headless");
-            // options.addArguments("--no-sandbox");
-            // options.addArguments("--disable-dev-shm-usage");
-            // driver = new ChromeDriver(options);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            driver = new ChromeDriver(options);
             /////////////////////////////////////////////////
             // To run in normal i.e. non-headless mode  
-            driver = new ChromeDriver();
+            // driver = new ChromeDriver();
         }
         return driver;
     }
