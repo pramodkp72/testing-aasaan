@@ -19,6 +19,7 @@ public class GoToAasaanApp {
     @Test
     public void testMethod1() {
         driver.get("https://aasaan.app");
+        // driver.get("https://admin.aasaan.app");
         String title = driver.getTitle();
         assertEquals("Aasaan - Headless commerce using AI", title);
     }
