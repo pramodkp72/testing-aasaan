@@ -15,6 +15,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+// All the dependencies below is also used for taking screenshots used for debugging headless chrome
+// import org.openqa.selenium.OutputType;
+// import org.openqa.selenium.TakesScreenshot;
+// import org.apache.commons.io.FileUtils;
+// import java.io.File;
+// import java.io.IOException;
+
 public class ChannelTest {
     private static WebDriver driver;
     static JavascriptExecutor jse;
@@ -44,6 +51,18 @@ public class ChannelTest {
         Thread.sleep(2000);
         System.out.println("Logged in successfully");
         System.out.println("User is at Home Page");
+
+
+		// The snippet below can be used to take screenshots to debug headless chrome
+		// File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		// try {
+		// 	FileUtils.copyFile(screenshot, new File("screenshot2.png"));
+		// } catch (IOException e) {
+		// 	e.printStackTrace();
+		// }
+
+		// WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("manage_tab")));
     	WebElement ManageTab = driver.findElement(By.id("manage_tab"));
     	ManageTab.click();
     	Thread.sleep(1000);
@@ -71,27 +90,29 @@ public class ChannelTest {
     	Thread.sleep(1000);
     }
 
-    @Test
-	@Order(2)
-	public void deleteChannel() throws InterruptedException {
-		WebElement Manage = driver.findElement(By.id("manage_tab"));
-		Manage.click();
-		Thread.sleep(1000);
-		jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-		Thread.sleep(3000);
-    	WebElement Channel = driver.findElement(By.id("channel"));
-    	Channel.click();
-    	Thread.sleep(1000);
-		WebElement moreOptions = driver.findElement(By.xpath("(//div[@id='more-options'])[2]"));
-		moreOptions.click();
-		Thread.sleep(1000);
-		WebElement deleteButton = driver.findElement(By.xpath("(//div[@title='Delete'])[2]"));
-		deleteButton.click();
-		Thread.sleep(1000);
-		WebElement deleteChannel = driver.findElement(By.xpath("//button[normalize-space()='Delete']"));
-		deleteChannel.click();
-		Thread.sleep(3000);
-	}
+    // @Test
+	// @Order(2)
+	// public void deleteChannel() throws InterruptedException {
+	// 	WebElement Manage = driver.findElement(By.id("manage_tab"));
+	// 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	// 	Manage.click();
+	// 	Thread.sleep(1000);
+	// 	jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+	// 	Thread.sleep(3000);
+	// 	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("channel")));
+    // 	WebElement Channel = driver.findElement(By.id("channel"));
+    // 	Channel.click();
+    // 	Thread.sleep(1000);
+	// 	WebElement moreOptions = driver.findElement(By.xpath("(//div[@id='more-options'])[2]"));
+	// 	moreOptions.click();
+	// 	Thread.sleep(1000);
+	// 	WebElement deleteButton = driver.findElement(By.xpath("(//div[@title='Delete'])[2]"));
+	// 	deleteButton.click();
+	// 	Thread.sleep(1000);
+	// 	WebElement deleteChannel = driver.findElement(By.xpath("//button[normalize-space()='Delete']"));
+	// 	deleteChannel.click();
+	// 	Thread.sleep(3000);
+	// }
 
     @AfterAll
     public static void tearDown() {

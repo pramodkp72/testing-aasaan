@@ -25,6 +25,7 @@ public class WebDriverUtil {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--headless");
             options.addArguments("--no-sandbox");
+            options.addArguments("--window-size=1920,1080");
             options.addArguments("--disable-dev-shm-usage");
             driver = new ChromeDriver(options);
             /////////////////////////////////////////////////
