@@ -90,29 +90,29 @@ public class ChannelTest {
     	Thread.sleep(1000);
     }
 
-    // @Test
-	// @Order(2)
-	// public void deleteChannel() throws InterruptedException {
-	// 	WebElement Manage = driver.findElement(By.id("manage_tab"));
-	// 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	// 	Manage.click();
-	// 	Thread.sleep(1000);
-	// 	jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-	// 	Thread.sleep(3000);
-	// 	WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("channel")));
-    // 	WebElement Channel = driver.findElement(By.id("channel"));
-    // 	Channel.click();
-    // 	Thread.sleep(1000);
-	// 	WebElement moreOptions = driver.findElement(By.xpath("(//div[@id='more-options'])[2]"));
-	// 	moreOptions.click();
-	// 	Thread.sleep(1000);
-	// 	WebElement deleteButton = driver.findElement(By.xpath("(//div[@title='Delete'])[2]"));
-	// 	deleteButton.click();
-	// 	Thread.sleep(1000);
-	// 	WebElement deleteChannel = driver.findElement(By.xpath("//button[normalize-space()='Delete']"));
-	// 	deleteChannel.click();
-	// 	Thread.sleep(3000);
-	// }
+    @Test
+	@Order(2)
+	public void deleteChannel() throws InterruptedException {
+		WebElement Manage = driver.findElement(By.id("manage_tab"));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		Manage.click();
+		Thread.sleep(1000);
+		jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		Thread.sleep(3000);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("channel")));
+    	WebElement Channel = driver.findElement(By.id("channel"));
+    	Channel.click();
+    	Thread.sleep(1000);
+		WebElement moreOptions = driver.findElement(By.xpath("(//div[@id='more-options'])[2]"));
+		moreOptions.click();
+		Thread.sleep(1000);
+		WebElement deleteButton = driver.findElement(By.xpath("(//div[@title='Delete'])[2]"));
+		deleteButton.click();
+		Thread.sleep(1000);
+		WebElement deleteChannel = driver.findElement(By.xpath("//button[normalize-space()='Delete']"));
+		deleteChannel.click();
+		Thread.sleep(3000);
+	}
 
     @AfterAll
     public static void tearDown() {
